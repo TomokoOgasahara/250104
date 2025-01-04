@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request; // Requestクラスのインポート
 use Illuminate\Support\Facades\DB; // DBクラスのインポート
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -23,7 +25,6 @@ class UserController extends Controller
     }
 
 // * フォームからのPOSTデータを保存
-// */
 public function store(Request $request)
 {
    // バリデーション
@@ -47,6 +48,27 @@ public function store(Request $request)
        'updated_at' => now(),
    ]);
 
+   // ユーザ登録
+   $user = User::create([
+    'name' => $request->input('name'),
+    'name_kana' => $request->input('name_kana'),
+    'email' => $request->input('email'),
+    'pref' => $request->input('pref'),
+    'job' => $request->input('job'),
+    'comp_univ' => $request->input('comp_univ'),
+    'dep' => $request->input('dep'),
+    'birth' => $request->input('birth'),
+]);
+
+    // パスワード登録リンク
+    $link = url('/user_pass?email=' . urlencode($user->email));
+
+    // メール送信
+    Mail::raw("以下のリンクからパスワードを設定してください。\n$link", function ($message) use ($user) {
+        $message->from('womtech1216@gmail.com', 'WomTech')
+                ->to($user->email)
+                ->subject('パスワード設定のご案内');
+    });
 
    // リダイレクト
    return redirect('user_tou_kaku')->with('success', '登録が完了しました！');

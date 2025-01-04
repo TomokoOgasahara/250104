@@ -6,6 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserPasswordController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CompsDatabaseController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TopPageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +50,19 @@ Route::get('/comps_database', function () {
     return view('comps_database');
 });
 
+Route::get('/review_touroku', function () {
+    return view('review_touroku');
+});
+
+Route::get('/review_touroku_kakunin', function () {
+    return view('review_touroku_kakunin');
+});
+
+Route::get('/landing', function () {
+    return view('landing');
+});
+
+
 Route::get('/dashboard', [IconController::class, 'index']);
 Route::get('/icon/create',[IconController::class, 'create']);
 Route::get('/icon/{icon_id}', [IconController::class, 'show']);
@@ -75,3 +91,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // �
 
 Route::get('/comps_database', [CompsDatabaseController::class, 'index']);
 Route::post('/comps_database', [CompsDatabaseController::class, 'show']);
+Route::get('/comps_database', [CompsDatabaseController::class, 'showCompanies']);
+
+Route::get('/review_touroku', [ReviewController::class, 'create'])->name('review_touroku.create'); // フォーム表示
+Route::post('/review_touroku', [ReviewController::class, 'store'])->name('review_touroku.store'); // データ登録
+
+Route::post('/landing', [ContactController::class, 'send']);
+
+Route::get('/top', [TopPageController::class, 'index'])->name('top')->middleware('auth');
