@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>本登録フォーム</title>
-    <link rel="stylesheet" href="/user_password_kakunin.css">
+    <link rel="stylesheet" href="{{ asset('/user_password_kakunin.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -18,8 +18,7 @@
 <h2>以下のボタンからログイン下さい。</h2>
 
 <div class="form18">
-<a href="/login" class="register-btn">ログインはこちら</a></div>
-
+<div class="register-btn"><a href="{{ asset('/log') }}">ログインはこちら</a></div>
 </body>
     <footer class="copyright">
         &copy; 2024 Wom-tech All Rights Reserved.

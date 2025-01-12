@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登録ページ</title>
-    <link rel="stylesheet" href="/review_touroku.css">
+    <link rel="stylesheet" href="{{ asset('/review_touroku.css') }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>

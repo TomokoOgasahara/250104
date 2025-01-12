@@ -43,6 +43,7 @@ class ReviewController extends Controller
             'comp_name' => $request->input('comp_name'),
             'speciality' => $request->input('speciality'),
             'employment_status' => $request->input('employment_status'),
+            'years_of_service' => $request->input('years_of_service'),            
             'age_group' => $request->input('age_group'),
             'employment_type' => $request->input('employment_type'),
             'growth_potential' => $request->input('growth_potential'),
@@ -59,5 +60,29 @@ class ReviewController extends Controller
 
         // 登録後のリダイレクト
         return redirect('review_touroku_kakunin')->with('success', '登録が完了しました！');
+    }
+
+    public function showReview(Request $request)
+    {
+        // Reviewテーブルからすべての企業名を取得（重複を除く）
+        $companies = DB::table('review')
+            ->select('comp_name')
+            ->distinct()
+            ->get();
+
+        // 選択された企業のクチコミを取得
+        $review = [];
+        if ($request->has('comp_name')) {
+            $review = DB::table('review')
+                ->where('comp_name', $request->input('comp_name'))
+                ->get(); // 複数データを取得
+        }
+
+        // データをビューに渡す
+        return view('review', [
+            'companies' => $companies, // 企業リストをビューに渡す
+            'comp_name' => $request->input('comp_name'),
+            'review' => $review, // 複数データ
+        ]);
     }
 }

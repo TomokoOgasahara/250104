@@ -24,6 +24,7 @@ class AuthController extends Controller
     {
         // バリデーション
         $request->validate([
+            'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
         ]);

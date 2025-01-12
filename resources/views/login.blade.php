@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログインフォーム</title>
-    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="{{ asset('/login.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -29,6 +29,10 @@
 
     <form action="{{ route('login') }}" method="POST">
         @csrf
+        <div class="form1">
+            <label for="name">氏名:</label>
+            <input type="name" id="name" name="name" required>
+        </div>
         <div class="form1">
             <label for="email">メールアドレス:</label>
             <input type="email" id="email" name="email" required>

@@ -9,6 +9,8 @@ use App\Http\Controllers\CompsDatabaseController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TopPageController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\RecruitController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -62,6 +64,29 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
+Route::get('/event_touroku', function () {
+    return view('event_touroku');
+});
+
+Route::get('/event_touroku_kakunin', function () {
+    return view('event_touroku_kakunin');
+});
+
+Route::get('/event', function () {
+    return view('event');
+});
+
+Route::get('/recruit_touroku', function () {
+    return view('recruit_touroku');
+});
+
+Route::get('/recruit', function () {
+    return view('recruit');
+});
+
+Route::get('/review', function () {
+    return view('review');
+});
 
 Route::get('/dashboard', [IconController::class, 'index']);
 Route::get('/icon/create',[IconController::class, 'create']);
@@ -89,9 +114,9 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); /
 Route::post('/login', [AuthController::class, 'login']); // ログイン処理
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // ログアウト
 
-Route::get('/comps_database', [CompsDatabaseController::class, 'index']);
+Route::get('/comps_database', [CompsDatabaseController::class, 'index'])->name('comps_database');
 Route::post('/comps_database', [CompsDatabaseController::class, 'show']);
-Route::get('/comps_database', [CompsDatabaseController::class, 'showCompanies']);
+Route::get('/comps_database', [CompsDatabaseController::class, 'showCompanies'])->name('comps_database');
 
 Route::get('/review_touroku', [ReviewController::class, 'create'])->name('review_touroku.create'); // フォーム表示
 Route::post('/review_touroku', [ReviewController::class, 'store'])->name('review_touroku.store'); // データ登録
@@ -99,3 +124,12 @@ Route::post('/review_touroku', [ReviewController::class, 'store'])->name('review
 Route::post('/landing', [ContactController::class, 'send']);
 
 Route::get('/top', [TopPageController::class, 'index'])->name('top')->middleware('auth');
+
+Route::get('/event_touroku', [EventController::class, 'create']);
+Route::post('/event_touroku', [EventController::class, 'store']);
+Route::get('/event', [EventController::class, 'showEvents'])->name('event'); // イベント一覧
+
+Route::post('/recruit_touroku', [RecruitController::class, 'store']);
+Route::get('/recruit', [RecruitController::class, 'showRecruits'])->name('recruit');
+
+Route::get('/review', [ReviewController::class, 'showReview'])->name('review');

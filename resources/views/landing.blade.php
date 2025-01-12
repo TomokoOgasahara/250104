@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ランディングページ</title>
-    <link rel="stylesheet" href="/landing.css">
+    <link rel="stylesheet" href="{{ asset('/landing.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -16,8 +16,8 @@
 </div>
 
 <div class="topbutton">
-    <div class="button1"><a href="/user_tou">会員登録はこちら</a></div>
-    <div class="button1"><a href="/login" >ログインはこちら</a></div>
+    <div class="button1"><a href="{{ asset('/user_tou') }}">会員登録はこちら</a></div>
+    <div class="button1"><a href="{{ asset('/log') }}">ログインはこちら</a></div>
     <div class="button2"><a href="#section5" >人事担当者はこちら</a></div>
 </div>
 
@@ -31,6 +31,11 @@
 
 <div class="topimage">
     <div class="text-overlay">
+    <style>
+    .topimage {
+        background-image: url('/gs-laravel/public/image/image1.png'); /* 背景画像 */
+    }
+    </style>
         <div class="servicename">STEM GATE</div>
         <div class="copy">自分らしく、一歩踏み出す</div>
     </div>
@@ -44,14 +49,14 @@
 <div class="dekirukoto">
     <div class="dekirukoto1">
         <div class="sentence3">独自の分析で女性活躍を見える化</div>
-        <img src="/image/image2.png" alt="Image 2" class="responsive-image"/>
+        <img src="{{ asset('image/image2.png') }}" alt="Image 2" class="responsive-image"/>
         <div class="sentence4">✓　女性活躍データベースの情報をダッシュボードでわかりやすく見える化</div>
         <div class="sentence4">✓　他企業との比較結果からAIが女性活躍の本気度を診断</div>
     </div>
 
     <div class="dekirukoto1">
     <div class="sentence3">信頼出来る口コミ</div>
-        <img src="/image/image3.png" alt="Image 3" class="responsive-image"/>
+        <img src="{{ asset('image/image3.png') }}" alt="Image 3" class="responsive-image"/>
         <div class="sentence4">✓　理工系女性コミュニティWom-techで集めた信頼出来る生の声</div>
         <div class="sentence4">✓　気になる企業に勤めるセンパイに直接相談出来る</div>
     </div>
@@ -64,33 +69,33 @@
 <div class="menu2"><section id="section2">STEM GATE導入企業</div></section>
 
 <div class="logo">
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" alt="Image 4" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
 </div>
 <div class="logo">
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
-    <img src="/image/image4.png" alt="Image 4" class="responsive-image2"/>
+<img src="{{ asset('image/image4.png') }}" alt="Image 4" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
+    <img src="{{ asset('image/image4.png') }}" class="responsive-image2"/>
 </div>
 
 <div class="menu2"><section id="section3">利用者の声</div></section>
 
 <div class="riyousya">
     <div class="riyousya1">
-        <img src="/image/image5.png" alt="Image 5" class="responsive-image"/>
+        <img src="{{ asset('image/image5.png') }}" alt="Image 5" class="responsive-image"/>
         <div class="sentence4">〇〇大学理学部　S.Aさん</div>
         <div class="sentence4">安心して働ける企業を見つけることができました</div>
     </div>
 
     <div class="riyousya1">
-        <img src="/image/image6.png" alt="Image 6" class="responsive-image"/>
+        <img src="{{ asset('image/image6.png') }}" alt="Image 6" class="responsive-image"/>
         <div class="sentence4">〇〇大学理学部　S.Aさん</div>
         <div class="sentence4">安心して働ける企業を見つけることができました</div>
     </div>
@@ -116,7 +121,7 @@
 @if (session('success'))
     @endif
 
-    <form action="/landing" method="POST">
+    <form action="{{ asset('/landing') }}" method="POST">
         @csrf
         <div class="form1">
             <label for="name">氏名:</label>

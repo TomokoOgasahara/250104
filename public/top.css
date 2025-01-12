@@ -22,6 +22,12 @@ div.title2 {
     align-items: center;    /* 垂直方向の中央揃え */
 }
 
+.name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 20px;
+    margin-left: 2%;
+}
+
 .button{
     display: flex;
     align-items: center;

@@ -1,0 +1,366 @@
+
+.title{
+    background-color: #4281C8;
+    display: flex;
+    align-items: center;    /* 垂直方向の中央揃え */
+}
+
+div.title1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 36px;
+    color: white !important;
+    padding: 10px;
+    margin-left: 20px;
+    align-items: center;    /* 垂直方向の中央揃え */
+}
+
+.title1 a {
+    text-decoration: none; /* 下線を消す */
+    color: white; /* リンクの色を白に設定 */
+}
+
+div.title2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    color: white !important;
+    padding: 10px;
+    align-items: center;    /* 垂直方向の中央揃え */
+}
+
+form {
+    margin-top: 24px;
+    margin-left: 20px;
+}
+
+select#comp_name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+}
+
+label.sentaku {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.button1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.block1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* 高さを揃える */
+    margin: 20px auto;
+    width: 90%!important;; /* 全体の幅 */
+}
+
+.graph1,.basicdata {
+    flex: 1; /* 各要素が均等に配置される */
+    padding: 20px;
+    box-sizing: border-box; /* パディングを含めたサイズ調整 */
+}
+
+.basicdata {
+    flex: 1; /* 右側の企業データも均等に配置 */
+    margin-left: 20px; /* 左のグラフとの間隔 */
+}
+
+.basicdata .label {
+    font-weight: bold;          /* ラベルを強調 */
+    margin-right: 10px;         /* ラベルと値の間にスペース */
+}
+
+.basicdata .value {
+    font-size: 20px;            /* 値のフォントサイズを指定 */
+    color: #333;                /* 値の色 */
+    margin-left: 24px;
+}
+
+.graph1 {
+    display: flex;
+    justify-content: center; /* グラフの水平中央揃え */
+    align-items: center; /* グラフの垂直中央揃え */
+}
+
+canvas#ReviewChart {
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 比率を維持 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 12px;
+}
+
+.bd1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    color: #4281C8;
+    display: flex;
+    align-items: center;    /* 垂直方向の中央揃え */
+    justify-content: center;
+}
+
+.bd2 {
+    display: flex;              /* ラベルと値を横並びに配置 */
+    justify-content: center; /* ラベルと値の間をスペースで調整 */
+    align-items: center;        /* 垂直方向の中央揃え */
+    padding: 10px 0;            /* 上下に余白を追加 */
+    border-bottom: 1px solid #ddd; /* 下線を追加して見やすく */
+}
+
+.bd2 {
+    background-color: #F1F8FF; /* 背景色 */
+    border-radius: 18px;       /* 角丸 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+    padding: 20px;             /* 内側余白 */
+    margin: 30px auto;         /* 上下のマージン */
+    width: 80%;                /* コンテナの幅 */
+    border: 1px solid #ddd;    /* 枠線 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 20px;
+}
+
+.review-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4281C8;
+    margin-bottom: 20px;
+    margin-left: 24px;
+}
+
+.button2-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: #4281C8;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: center;    /* 垂直方向の中央揃え */
+    width: 400px;
+}
+
+.menu2 {
+    background: linear-gradient(90deg, #D9EBFF 0%, rgba(253, 167, 255, 0.20) 50%, #D9EBFF 100%);
+    display: flex;
+    justify-content: center; /* メニューを右寄せ */
+    align-items: center; /* 垂直方向で中央揃え */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 24px;
+}
+
+.wd {
+    display: flex;              /* ラベルと値を横並びに配置 */
+    justify-content: space-between; /* 均等配置 */
+    align-items: center;        /* 垂直方向の中央揃え */
+    margin: 20px auto;          /* 上下中央揃え */
+    width: 90%;                 /* 全体の幅 */
+    max-width: 1200px;          /* 最大幅 */
+}
+
+.wd-box {
+    background-color: #F1F8FF;  /* 背景色 */
+    border-radius: 18px;        /* 角丸 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+    padding: 20px;              /* 内側余白 */
+    margin: 0 10px;             /* ボックス間のスペース */
+    flex: 1;                    /* 均等に拡大 */
+    max-width: 300px;           /* 各ボックスの最大幅 */
+    text-align: center;         /* テキストを中央揃え */
+    border: 1px solid #ddd;     /* 枠線 */
+}
+
+.wdlabel {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    color: #333;               /* ラベルの色 */
+    display: block;            /* ブロック要素化で改行 */
+    margin-bottom: 10px;       /* ラベルと値の間の余白 */
+}
+
+.wdvalue {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 52px;
+    font-weight: bold;          /* 太字 */
+    color: #000;                /* 値の色 */
+}
+
+.rank {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 20px;
+}
+
+.block2 {
+    display: flex;
+    justify-content: space-between; /* 各グラフを均等に配置 */
+    align-items: flex-start; /* グラフを上揃え */
+    margin: 20px auto; /* 外側の余白 */
+    max-width: 1200px; /* 全体の最大幅 */
+    width: 90%; /* 全体の幅 */
+}
+
+.graph2 {
+    max-width: 300px; /* 親コンテナの幅 */
+    height: 300px; /* 親コンテナの高さ */
+    display: flex;
+    flex-direction: column; /* タイトルとグラフを縦並び */
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* 背景色 */
+    border-radius: 18px; /* 角丸 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+    margin: 10px; /* ボックス間の余白 */
+    padding: 10px; /* 内側の余白 */
+    overflow: hidden; /* ボックス内に収まるようにクリッピング */
+}
+
+canvas#genderChart {
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 比率を維持 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 12px;
+    padding: 10px;
+}
+
+canvas#tenureChart {
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 比率を維持 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 12px;
+    padding: 10px;
+}
+
+canvas#wagegapChart {
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 比率を維持 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 12px;
+}
+
+.wd2 {
+    display: flex;              /* ラベルと値を横並びに配置 */
+    justify-content: center; /* 均等配置 */
+    align-items: center;        /* 垂直方向の中央揃え */
+    margin: 20px auto;          /* 上下中央揃え */
+    width: 90%;                 /* 全体の幅 */
+    max-width: 1200px;          /* 最大幅 */
+}
+
+.wd-box2 {
+    background-color: rgba(234, 221, 255, 0.5);  /* 背景色 */
+    border-radius: 18px;        /* 角丸 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+    padding: 20px;              /* 内側余白 */
+    margin: 0 24px;             /* ボックス間のスペース */
+    flex: 1;                    /* 均等に拡大 */
+    max-width: 300px;           /* 各ボックスの最大幅 */
+    text-align: center;         /* テキストを中央揃え */
+    border: 1px solid #ddd;     /* 枠線 */
+}
+
+/* AIコメント全体のスタイル */
+.ai-comment {
+    display: flex; /* 横並び */
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    flex-direction: column; /* 縦並び */
+    gap: 20px; /* 各セクション間のスペース */
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+/* 良いところコンテナ */
+.ai-box-good {
+    width: 100%; /* 横幅を全体に合わせる */
+    background-color: #E7F3FF; /* 背景色 */
+    border-radius: 10px; /* 角丸 */
+    padding: 15px; /* 内側の余白 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 少しの影 */
+    display: flex;
+    flex-direction: column; /* ラベルと内容を縦並びにする */
+    gap: 10px; /* ラベルと内容の間隔 */
+}
+
+/* 悪いところコンテナ */
+.ai-box-bad {
+    width: 100%; /* 横幅を全体に合わせる */
+    background-color: #EBEDF0; /* 背景色 */
+    border-radius: 10px; /* 角丸 */
+    padding: 15px; /* 内側の余白 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 少しの影 */
+    display: flex;
+    flex-direction: column; /* ラベルと内容を縦並びにする */
+    gap: 10px; /* ラベルと内容の間隔 */
+}
+
+/* ラベル */
+.ai-box1 {
+    font-family: 'Zen Maru Gothic', sans-serif; /* フォント */
+    font-size: 20px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    padding: 5px 10px; /* 内側の余白 */
+    border-radius: 5px; /* 角丸 */
+    color: black; /* 文字色 */
+    display: inline-block;
+}
+
+/* コメントのスタイル */
+.aicomment {
+    font-family: 'Zen Maru Gothic', sans-serif; /* フォント */
+    font-size: 20px; /* フォントサイズ */
+    color: #333; /* 文字色 */
+    line-height: 1.6; /* 行間 */
+}
+
+/* データが無い場合のスタイル */
+.aicomment:empty::after {
+    content: 'データ無し'; /* 表示するテキスト */
+    color: #999; /* 色 */
+    font-style: italic; /* 斜体 */
+}
+
+.linkinfo {
+    display: flex; /* 横並び */
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+
+}
+
+.button3 {
+    background: linear-gradient(90deg, #D9EBFF 0%, rgba(253, 167, 255, 0.20) 50%, #D9EBFF 100%);
+    color: #ffffff;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: center;    /* 垂直方向の中央揃え */
+    text-align: center;
+    width: 500px;
+    margin-top: 52px;
+    margin-left: 24px;
+}
+
+.copyright{
+    display: flex;
+    align-items: center;    /* 垂直方向の中央揃え */
+    justify-content: center;
+    margin-top: 50px;
+}

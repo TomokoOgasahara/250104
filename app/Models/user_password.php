@@ -12,6 +12,7 @@ class user_password extends Authenticatable
     protected $table = 'userpassword'; // テーブル名を指定
 
     protected $fillable = [
+        'name',
         'email',
         'password',
     ];
